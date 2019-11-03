@@ -1,4 +1,4 @@
-```python
+
 #python3 only
 import dropbox        #匯入dropbox api python模組及datetime模組
 import datetime
@@ -11,4 +11,3 @@ dropbox_path='/upload/'    #指定的Dropbox資料夾
 dbx=dropbox.Dropbox('QRQtJ6b_BVAAAAAAAAAAIV_O2Em74Cj6UiMEy1jJ8H84Y9TIZlkk1XS9jRTfnC6E')  #設定dropbox token
 with open(file_name, 'rb') as f:
   dbx.files_upload(f.read(),dropbox_path+str(time)+".jpg",mute=True)      #開啟檔案並以目前時間為檔名上傳
-```
