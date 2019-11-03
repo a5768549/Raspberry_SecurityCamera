@@ -1,0 +1,10 @@
+#!/bin/sh                   #使用sh編譯
+cd /home/pi/Downloads/       #讀取路徑
+fswebcam upload.jpg          #第一次呼叫照相，並以upload.jpg為檔名儲存
+sleep 4s                     #delay四秒
+fswebcam upload.jpg          #第二次呼叫照相，並以upload.jpg為檔名儲存(為了防止樹梅派第一次未讀取到攝影機，所以在呼叫一次)
+python3 upload.py            #呼叫python進行照片上傳
+cp /home/pi/Downloads/upload.jpg /home/pi/photo/     #將照片複製至指定位置(備份)
+cd /home/pi/photo/                                #讀取該路徑
+now=$(date +'%Y%m%d%H%M%S')                   #設定目前時間變數
+mv upload.jpg $now                               #將備份照片重新命名為現在時間
